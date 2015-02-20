@@ -1,9 +1,10 @@
 /*globals L, Papa, cartodb: true */
 
 $(function() {
+  var holder = document.getElementById('holder');
   var colTemplate = _.template($('#col-template').html());
-
   var data = {};
+
 
   function digest(value, key) {
     if (!_.has(data, key)) {
@@ -33,13 +34,13 @@ $(function() {
   }
 
   //   Papa.parse("./dataclip.csv", {
-  document.querySelector("#file").onchange = function() {
+  // document.querySelector("#file").onchange = function() {
+  function load(files) {
     $('#results').empty();
     $('.loading').show();
 
-    var file = document.getElementById('file').files[0];
+    var file = files[0]; // document.getElementById('file').files[0];
 
-    console.log($("input[type=file]"));
     Papa.parse(file, {
       download: true,
       header: true,
@@ -54,7 +55,7 @@ $(function() {
       },
       complete: function() {
         $('.loading').hide();
-        console.log("All done!", data);
+        console.log("2!", data);
         _.each(data, function(stats, key) {
           var h = colTemplate({
             name: key,
@@ -64,6 +65,14 @@ $(function() {
         });
       }
     });
+  }
+
+  holder.ondragover = function () { this.className = 'hover'; return false; };
+  holder.ondragend = function () { this.className = ''; return false; };
+  holder.ondrop = function (e) {
+    this.className = '';
+    e.preventDefault();
+    load(e.dataTransfer.files);
   };
 
 });

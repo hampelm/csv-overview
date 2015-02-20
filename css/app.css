@@ -20,6 +20,19 @@ code {
   margin: 2rem;
 }
 
+#holder {
+  border: 5px dashed #58aeff;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#holder.hover {
+  background: #58aeff;
+  border-color: #daedff;
+  color: #fff;
+}
+
 .top {
   padding: 10px;
   background: #6e6663;
@@ -44,17 +57,14 @@ code {
   border-radius: 5px;
   border: 1px solid #cbc8c7;
   color: #6e2b2a;
+  font-size: 0.9em;
+  line-height: 1.8em;
 }
 
 .sample {
   display: inline-block;
   margin-right: 1rem;
 }
-
-.loading {
-  display: none;
-}
-
 
 /*
  *  Usage:
@@ -75,7 +85,7 @@ code {
   text-align: center;
   font-size: 10px; }
 .sk-spinner-wave div {
-  background-color: #b7aba5;
+  background-color: #58aeff;
   height: 100%;
   width: 6px;
   display: inline-block;
@@ -112,4 +122,9 @@ code {
     -webkit-transform: scaleY(1);
             transform: scaleY(1); } }
 
+
+#container .sk-spinner.loading {
+  margin-top: 4rem;
+  display: none;
+}
 

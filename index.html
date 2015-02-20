@@ -14,8 +14,11 @@
   <body>
 
     <div id="container">
-      <input type="file" id="file">
-      <input type="submit">
+      <h1>CSV Overview</h1>
+      <p>Load a CSV to see basic stats for each column, including data completeness and unique values. Your data will not be uploaded to a remote server.</p>
+      <div id="holder">
+        <h2>Drop a CSV here to get started</h2>
+      </div>
       <div class="sk-spinner sk-spinner-wave loading">
         <div class="sk-rect1"></div>
         <div class="sk-rect2"></div>
@@ -26,6 +29,7 @@
       <div id="results"></div>
     </div>
 
+    <!-- All this should be significantly simplified in app.js. -->
     <script type="text/template" id="col-template">
     <div class="col">
       <div class="top">
@@ -75,7 +79,6 @@
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.0/papaparse.min.js"></script>
-    <script src="js/leaflet.utfgrid.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/app.js"></script>
 
