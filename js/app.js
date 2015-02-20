@@ -5,13 +5,6 @@ $(function() {
 
   var data = {};
 
-  function preflight() {
-    _.each(data, function(d, key) {
-
-    });
-  }
-
-
   function digest(value, key) {
     if (!_.has(data, key)) {
       data[key] = {
@@ -39,7 +32,7 @@ $(function() {
     _.each(row, digest);
   }
 
-  Papa.parse("./dataclip.csv", {
+  Papa.parse("./data.csv", {
     download: true,
     header: true,
     skipEmptyLines: true,

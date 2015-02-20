@@ -20,21 +20,23 @@
         <% if(stats.values.length === _.keys(stats.valueCount).length) { %>
         <li><strong>Unique</strong></li>
         <% } %>
-        <li>Total <%= stats.values.length %></li>
+        <li>Total: <%= stats.values.length %></li>
         <li>
-          Unique <%= _.keys(stats.valueCount).length %>
-          <ul>
-          <% _.each(_.sortBy(_.pairs(stats.valueCount), function(x) { return x[1]}).reverse().slice(0,5), function(pair) { %>
-            <li><code><%= pair[0] %></code> (<%= pair[1] %>)</li>
-          <% }); %>
-          </ul>
+          Unique: <%= _.keys(stats.valueCount).length %>
         </li>
-        <li>Nulls <%= stats.nullCount %></li>
+        <li>Nulls: <%= stats.nullCount %></li>
         <li>
           Types:
           <% _.each(stats.types, function(count, type){ %>
             <%= type %> (<%= count %>)
           <% }); %>
+        </li>
+        <li>Common sample values:
+          <ul>
+          <% _.each(_.sortBy(_.pairs(stats.valueCount), function(x) { return x[1]}).reverse().slice(0,5), function(pair) { %>
+            <li><code><%= pair[0] %></code> (<%= pair[1] %>)</li>
+          <% }); %>
+          </ul>
         </li>
       </ul>
     </div>
