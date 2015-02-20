@@ -61,6 +61,17 @@ code {
   line-height: 1.8em;
 }
 
+.preview {
+  height: 300px;
+  background: -moz-linear-gradient(top, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.8) 39%, rgba(255,255,255,1.00) 100%), url('../img/preview.png') no-repeat;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.8)), color-stop(39%,rgba(255,255,255,0.8)), color-stop(100%,rgba(255,255,255,1.00))), url('../img/preview.png') no-repeat;
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.8) 39%,rgba(255,255,255,1.00) 100%), url('../img/preview.png') no-repeat;
+  background: -o-linear-gradient(top, rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.8) 39%,rgba(255,255,255,1.00) 100%), url('../img/preview.png') no-repeat;
+  background: -ms-linear-gradient(top, rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.8) 39%,rgba(255,255,255,1.00) 100%), url('../img/preview.png') no-repeat;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.8) 39%,rgba(255,255,255,1.00) 100%), url('../img/preview.png') no-repeat;
+  background-size: 100% auto;
+}
+
 .sample {
   display: inline-block;
   margin-right: 1rem;
