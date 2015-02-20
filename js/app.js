@@ -32,29 +32,38 @@ $(function() {
     _.each(row, digest);
   }
 
-  Papa.parse("./dataclip.csv", {
-    download: true,
-    header: true,
-    skipEmptyLines: true,
-    dynamicTyping: true,
-    step: function(row) {
-      if(row.errors.length > 0) {
-        console.log("error", row);
-      } else {
-        process(row.data[0]);
-      }
-    },
-    complete: function() {
-      console.log("All done!", data);
-      _.each(data, function(stats, key) {
-        var h = colTemplate({
-          name: key,
-          stats: stats
-        });
-        $('#container').append(h);
-      });
-    }
-  });
+  //   Papa.parse("./dataclip.csv", {
+  document.querySelector("#file").onchange = function() {
+    $('#results').empty();
+    $('.loading').show();
 
+    var file = document.getElementById('file').files[0];
+
+    console.log($("input[type=file]"));
+    Papa.parse(file, {
+      download: true,
+      header: true,
+      skipEmptyLines: true,
+      // dynamicTyping: true,
+      step: function(row) {
+        if(row.errors.length > 0) {
+          console.log("error", row);
+        } else {
+          process(row.data[0]);
+        }
+      },
+      complete: function() {
+        $('.loading').hide();
+        console.log("All done!", data);
+        _.each(data, function(stats, key) {
+          var h = colTemplate({
+            name: key,
+            stats: stats
+          });
+          $('#results').append(h);
+        });
+      }
+    });
+  };
 
 });

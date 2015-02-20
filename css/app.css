@@ -1,12 +1,115 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+body {
+  color: #45403e;
+}
+
+code {
+  font-family: 'Source Code Pro', monospace;
 }
 
 .col {
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }
 
 #container {
-  margin: 2em 0 0 2em;
+  margin: 2rem;
 }
+
+.top {
+  padding: 10px;
+  background: #6e6663;
+  color: #fff;
+}
+
+.warning {
+  color: #ffad00;
+}
+
+.details {
+  padding: 10px;
+}
+
+.details h3 {
+  font-weight: normal;
+  margin-bottom: 0.3rem;
+}
+
+.details code {
+  padding: 1px 4px;
+  border-radius: 5px;
+  border: 1px solid #cbc8c7;
+  color: #6e2b2a;
+}
+
+.sample {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.loading {
+  display: none;
+}
+
+
+/*
+ *  Usage:
+ *
+ *    <div class="sk-spinner sk-spinner-wave">
+ *      <div class="sk-rect1"></div>
+ *      <div class="sk-rect2"></div>
+ *      <div class="sk-rect3"></div>
+ *      <div class="sk-rect4"></div>
+ *      <div class="sk-rect5"></div>
+ *    </div>
+ *
+ */
+.sk-spinner-wave.sk-spinner {
+  margin: 0 auto;
+  width: 100px;
+  height: 75px;
+  text-align: center;
+  font-size: 10px; }
+.sk-spinner-wave div {
+  background-color: #b7aba5;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+  -webkit-animation: sk-waveStretchDelay 1.2s infinite ease-in-out;
+          animation: sk-waveStretchDelay 1.2s infinite ease-in-out; }
+.sk-spinner-wave .sk-rect2 {
+  -webkit-animation-delay: -1.1s;
+          animation-delay: -1.1s; }
+.sk-spinner-wave .sk-rect3 {
+  -webkit-animation-delay: -1s;
+          animation-delay: -1s; }
+.sk-spinner-wave .sk-rect4 {
+  -webkit-animation-delay: -0.9s;
+          animation-delay: -0.9s; }
+.sk-spinner-wave .sk-rect5 {
+  -webkit-animation-delay: -0.8s;
+          animation-delay: -0.8s; }
+
+@-webkit-keyframes sk-waveStretchDelay {
+  0%, 40%, 100% {
+    -webkit-transform: scaleY(0.4);
+            transform: scaleY(0.4); }
+
+  20% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1); } }
+
+@keyframes sk-waveStretchDelay {
+  0%, 40%, 100% {
+    -webkit-transform: scaleY(0.4);
+            transform: scaleY(0.4); }
+
+  20% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1); } }
+
+
