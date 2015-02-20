@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.col {
+  margin-bottom: 1em;
+}
+
+#container {
+  margin: 2em 0 0 2em;
+}
