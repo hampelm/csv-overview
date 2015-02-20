@@ -32,7 +32,7 @@ $(function() {
     _.each(row, digest);
   }
 
-  Papa.parse("./data.csv", {
+  Papa.parse("./dataclip.csv", {
     download: true,
     header: true,
     skipEmptyLines: true,
